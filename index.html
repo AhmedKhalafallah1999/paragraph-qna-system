@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paragraph QnA System</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tektur&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/qna"></script>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Paragraph QnA System</h1>
+            <div id="model-status" class="status inactive">Model: Not Loaded</div>
+        </header>
+
+        <div id="paragraph-input-section" class="paragraph-panel">
+            <label for="paragraph-input">Enter a paragraph as your knowledge base:</label>
+            <textarea id="paragraph-input" placeholder="Paste or type your text here..."></textarea>
+            <div class="btn-container">
+                <button id="submit-paragraph" class="btn primary">Submit Paragraph</button>
+            </div>
+        </div>
+
+        <div id="paragraph-display-section" class="paragraph-panel hidden">
+            <label>Knowledge Base:</label>
+            <div id="paragraph-display" class="paragraph-display"></div>
+            <div class="btn-container">
+                <button id="edit-paragraph" class="btn secondary">Edit</button>
+            </div>
+        </div>
+
+        <div id="chat-container" class="chat-container hidden">
+            <div id="chat-messages" class="messages">
+                <div class="welcome-message">
+                    <p>Ask questions about your paragraph!</p>
+                    <p>I'll try to answer based on the information provided.</p>
+                </div>
+            </div>
+            <div id="loading-status" class="model-status hidden">
+                <span class="loader"></span> Thinking...
+            </div>
+            <div class="message-input-container">
+                <input type="text" id="question-input" placeholder="Ask a question..." disabled />
+                <button id="send-question" class="btn primary" disabled>
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+
+        <div id="notification" class="notification"></div>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
