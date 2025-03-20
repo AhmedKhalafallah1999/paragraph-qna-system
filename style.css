@@ -258,6 +258,6 @@ textarea {
         height: 100svh;
         max-width: 100%;
         border-radius: 0;
-        max-height: unset;
+        max-height: 100%;
     }
 }
